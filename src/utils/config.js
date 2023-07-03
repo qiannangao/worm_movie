@@ -1,0 +1,1 @@
+export const baseURL=process.env.NODE_ENV=='development'?'http://192.168.124.100:3000':'http://www.bufantec.com'
