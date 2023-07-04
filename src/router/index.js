@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import LayoutView from '../layout/LayoutView'
 import IndexView from '../views/IndexView'
 import ListView from '../views/ListView'
@@ -13,16 +12,16 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'layout',
+   
     component: LayoutView,
     children:[
       {
         path:'/',
         name:'index',
-        component: () => import('../views/IndexView')
+        component: () => import('../views/IndexView'),
       },
       {
-        path:'/list',
+        path:'/list/:type',
         name:'list',
         component: () => import('../views/ListView')
       },

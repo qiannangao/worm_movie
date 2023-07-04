@@ -7,4 +7,12 @@
 5.图片资源文件存放在assets文件夹下
 6.在router/index.js中书写对应路由表；layout的子路由页面有index首页，list榜单页，movie-detail电影详情页，mine个人信息页；layout同级的路由页面有login登录注册页,trailer预告片页
 7.LayoutView.vue中书写公共头部和尾部
-## index主页
+## 实现步骤
+### 导航栏
+1.切换页面时给router-link添加激活样式
+### index主页
+1.传入getMovie函数;初始化渲染电影列表时调用getMovie函数并传入不同的参数
+### list榜单页
+1.使用组件内导航守卫beforeRouteEnter，根据传进的type参数调用getMovie函数，（index页面中使用params动态传参，点击进入list页面时传递type参数）;使用v-for循环渲染列表数据
+2.导航栏切换：导航项route-link点击时进行传参，使用组件内导航守卫beforeRouteUpdate监测type值的变化；点击对应导航项，修改type值，然后调用getMovie函数重新渲染数据
+
