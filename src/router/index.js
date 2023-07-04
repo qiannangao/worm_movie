@@ -26,7 +26,7 @@ const routes = [
         component: () => import('../views/ListView')
       },
       {
-        path:'/detail',
+        path:'/detail/:mId',
         name:'detail',
         component: () => import('../views/DetailView')
       },

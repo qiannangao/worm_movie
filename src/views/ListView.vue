@@ -26,29 +26,29 @@
         <ul class="list">
           <!-- 跳转时,携带这部电影的 mId -->
           <li class="item" v-for="(movie, i) in movieList" :key="i">
-            <a href="movie-detail.html?mId=32476598347">
-              <div class="num">{{ i + 1 }}</div>
+            <router-link :to="'/detail/' + movie.mId">
+              <div class="num">{{ i > 0 ? i + 1 : "" }}</div>
               <div class="cover">
                 <img :src="movie.medium" alt="" />
               </div>
               <div class="info">
                 <div class="title">{{ movie.title }}</div>
-                <p class="actor">主演:{{ movie.director[0] }}</p>
-                <p class="time">上映时间{{ movie.show_date[1] }}</p>
-                <div class="rate">
-                  {{ movie.rating_average.split(".")[0] }}.<span>{{
-                    movie.rating_average.split(".")[1]
-                  }}</span>
-                </div>
+                <p class="actor">导演:{{ movie.director | toStr }}</p>
+                <p class="actor">编剧:{{ movie.scriptwriter | toStr }}</p>
+                <p class="time">上映时间:{{ movie.show_date | toStr }}</p>
+                <div class="rate" v-rate="movie.rating_average"></div>
               </div>
-            </a>
+            </router-link>
           </li>
         </ul>
         <div class="page clearfix">
-          <!-- <span class="num">1</span>
-                <span class="num">2</span>
-                <span class="num">3</span>
-                <span class="num">4</span> -->
+          <router-link
+            class="num"
+            to="/list/0/{start:i,limit:8}"
+            v-for="i in total"
+            :key="i"
+            >{{ i }}</router-link
+          >
         </div>
       </div>
     </div>
@@ -64,8 +64,24 @@ export default {
     return {
       type: 0,
       movieList: [],
-      count: 0,
+      total: 0,
     };
+  },
+  filters: {
+    toStr(arr) {
+      return arr.join(",");
+    },
+  },
+  // 自定义指令
+  directives: {
+    rate: {
+      bind(el, binding) {
+        // 评分拆分；binding.value是指令绑定的值
+        el.innerHTML = `${binding.value[0]}.<span>${
+          binding.value[2] || 0
+        }</span>`;
+      },
+    },
   },
   beforeRouteEnter(to, from, next) {
     // 在渲染该组件的对应路由被 confirm 前调用
@@ -96,6 +112,7 @@ export default {
       let res = await getMovie(this.type);
       console.log("list页调用函数的返回值", res);
       this.movieList = res.data.data.list;
+      this.total = res.data.data.totalPage;
     },
   },
 };
