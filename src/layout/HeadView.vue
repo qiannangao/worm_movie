@@ -21,7 +21,7 @@
               <a href="">演出</a>
             </li>
             <li class="nav-item">
-              <router-link to="/list/0">榜单</router-link>
+              <router-link to="/list">榜单</router-link>
             </li>
             <li class="nav-item">
               <a href="">热点</a>
@@ -35,7 +35,9 @@
             <img src="../assets/bd.png" alt="" />
             <ul class="mine-list">
               <li>我的订单</li>
-              <li class="mine-info">我的信息</li>
+              <li class="mine-info">
+                <router-link to="/mine">我的信息</router-link>
+                </li>
               <li class="mine-unlog">退出登录</li>
             </ul>
           </div>

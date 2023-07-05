@@ -1,0 +1,101 @@
+.login {
+    width: 961px;
+    margin: 198px auto 0;
+  }
+  
+  .login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .img {
+    width: 480px;
+    height: 370px;
+    background-color: #ff9000;
+  }
+  
+  .login-input {
+    width: 348px;
+  }
+  
+  .login-input .line {
+    margin-bottom: 11px;
+    border-bottom: 1px solid rgba(207,207,207,1);
+    font-size: 16px;
+    color: #9E9E9E;
+  }
+  
+  .login-input .line input {
+    border: none;
+    outline: none;
+    line-height: 42px;
+  }
+  
+  .btn {
+    width: 348px;
+    line-height: 47px;
+    margin-top: 27px;
+    margin-bottom: 35px;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    border-radius: 23.5px;
+    cursor: pointer;
+    background-color: #e66f11;
+  }
+  
+  .read {
+    display: flex;
+  }
+  
+  .read .checkbox{
+    position: relative;
+    width: 19px;
+    height: 19px;
+    margin-right: 19px;
+    border-radius: 50%;
+    border: 1px solid rgba(207,207,207,1);
+    flex-shrink: 0;
+  }
+  
+  .read .checkbox input[type=checkbox] {
+      visibility: hidden;
+  }
+  
+  .read .checkbox label {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+  
+  .read .checkbox input:checked + label {
+    background-color: #E63211;
+  }
+  
+  .read p {
+    width: 323px;
+    height: 22px;
+    text-align: left;
+    font-size: 14px;
+    color: #9E9E9E;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  
+  .read p span {
+    color: #E63211;
+  }
+  
+  .switch {
+    margin-top: 15px;
+    cursor: pointer;
+    color: #e66f11;
+    text-decoration: underline;
+  }
+  .btn a{
+    color: #fff;
+  }

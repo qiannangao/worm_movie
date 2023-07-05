@@ -1,0 +1,463 @@
+.main-c {
+    width: 1200px;
+    height: 1236px;
+    box-sizing: border-box;
+    border: 1px solid rgba(216, 216, 216, 1);
+    margin: 32px auto 73px;
+}
+
+.main .side {
+    float: left;
+    width: 215px;
+    height: 1234px;
+    background: #F4F3F4;
+    text-align: center;
+    padding-top: 42px;
+    box-sizing: border-box;
+}
+
+.side .title {
+    font-size: 22px;
+    color: #4D4D4D;
+    line-height: 30px;
+    margin-bottom: 60px;
+    font-weight: bold;
+}
+
+.side .tab-item {
+    width: 215px;
+    height: 47px;
+    display: inline-block;
+    line-height: 47px;
+    cursor: pointer;
+    color: #4D4D4D;
+}
+
+.side .tab-item.router-link-active {
+    background-color: #E66F11;
+    color: #fff;
+}
+
+.main .content {
+    float: left;
+    width: 905px;
+    padding: 42px 30px 78px 48px;
+    box-sizing: content-box;
+    background-color: #fff;
+    height: 640px;
+}
+
+.content .con-title {
+    font-size: 18px;
+    color: #4D4D4D;
+    line-height: 25px;
+    font-weight: bold;
+    margin-bottom: 41px;
+}
+
+/* 收藏板块样式 */
+.con.collect .item {
+    height: 170px;
+    box-sizing: border-box;
+    border: 1px solid rgba(226, 226, 226, 1);
+    margin-bottom: 23px;
+}
+
+.con.collect .item .top,
+.con.discuss .item .top {
+    position: relative;
+    line-height: 43px;
+    background-color: #F7F7F7;
+    font-size: 14px;
+    color: #4D4D4D;
+    padding-left: 24px;
+}
+
+.con.collect .item .top .del-icon,
+.con.discuss .item .top .del-icon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 23px;
+    top: 12px;
+    background: url(@/assets/del.png) no-repeat center;
+}
+
+.con.collect .item .text {
+    position: relative;
+}
+
+.con.collect .item img,
+.con.discuss .item img {
+    float: left;
+    width: 66px;
+    height: 91px;
+    margin-top: 18px;
+    margin-left: 24px;
+}
+
+.con.collect .item .cname {
+    float: left;
+    width: 70%;
+    font-size: 18px;
+    color: #4D4D4D;
+    font-weight: bold;
+    margin-left: 18px;
+    margin-top: 20px;
+    margin-bottom: 11px;
+}
+
+.con.collect .item p {
+    width: 70%;
+    float: left;
+    font-size: 12px;
+    color: #4D4D4D;
+    line-height: 17px;
+    margin-left: 18px;
+    margin-bottom: 4px;
+}
+
+.con.collect .item a {
+    position: absolute;
+    right: 49px;
+    top: 46px;
+    font-size: 14px;
+    color: #E66F11;
+    line-height: 20px;
+}
+
+/* 公共分页样式 */
+.content .page {
+    width: fit-content;
+    margin: 79px auto 0;
+}
+
+.content .page span {
+    float: left;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(209, 209, 209, 1);
+    text-align: center;
+    line-height: 32px;
+    color: #676767;
+    cursor: pointer;
+    margin: 0 7px;
+    font-weight: bold;
+}
+
+.content .page span.act {
+    background-color: #E66F11;
+    color: #fff;
+}
+
+/* 评论板块样式 */
+.con.discuss .item {
+    height: 209px;
+    box-sizing: border-box;
+    border: 1px solid rgba(226, 226, 226, 1);
+    margin-bottom: 21px;
+}
+
+.con.discuss .item .date {
+    float: left;
+    width: 764px;
+    font-size: 14px;
+    color: #4D4D4D;
+    line-height: 20px;
+    margin: 18px 0 13px 24px;
+}
+
+.con.discuss .item .detail {
+    float: left;
+    width: 764px;
+    margin-left: 24px;
+    font-size: 12px;
+    color: #676767;
+    line-height: 17px;
+}
+
+.con.discuss .item .date .rate {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.con.discuss .item .rate img {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+/* 用户管理样式 */
+.con.admin table {
+    width: 100%;
+    font-size: 12px;
+    color: #4D4D4D;
+}
+
+.con.admin table thead tr {
+    background: #F7F7F7;
+    font-size: 14px;
+}
+
+.con.admin table tr td,
+.con.admin table tr th {
+    line-height: 50px;
+    padding: 0;
+    text-align: center;
+
+}
+
+.con.admin table tr td .avatar {
+    width: 34px;
+    height: 34px;
+}
+
+/* 基本信息样式 */
+.con.info .bg {
+    width: 197px;
+    float: left;
+}
+
+.con.info .bg img {
+    width: 197px;
+    height: 197px;
+    display: block;
+}
+
+.con.info .bg .btn {
+    width: 150px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #4D4D4D;
+    background: #D8D8D8;
+    border-radius: 4px;
+    margin: 17px 0 24px;
+    display: block;
+}
+
+.con.info .bg span {
+    font-size: 14px;
+    color: #9E9E9E;
+    line-height: 20px;
+}
+
+.con.info form {
+    float: left;
+    margin-left: 80px;
+    width: 450px;
+}
+
+#pwd+span {
+    font-size: 14px;
+    color: #E66F11;
+    cursor: pointer;
+}
+
+.col-sm-2 {
+    width: 20%;
+}
+
+.col-sm-10 {
+    width: 80%;
+}
+
+form .form-control {
+    width: 213px;
+    display: inline-block;
+    margin-right: 16px;
+}
+
+#sign {
+    width: 345px;
+}
+.form-horizontal {
+   width: 450px;
+   height: 454px;
+}
+.control-label{
+  font-weight: 600;
+    line-height: 34px;
+    float: left;
+}
+.form-control{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 213px;
+    height: 34px;
+}
+.form-group:nth-child(3) {
+    line-height: 34px;
+}
+.radio-inline{
+    width: 50px;
+    height: 34px;
+    float: left;
+    margin-left: 23px;
+}
+.form-group{
+    width: 480px;
+    height: 34px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+.changepwd{
+    position: absolute;
+    right: -36px;
+    bottom: 6px;
+}
+.eye{
+    position: absolute !important;
+    right: 50px !important;
+    bottom: 6px;
+}
+#birthday{
+    font-size: 18px;
+}
+form .save {
+    background: #E66F11;
+    border-radius: 4px;
+    width: 103px;
+    line-height: 44px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    margin-left: calc(20% + 25px);
+    margin-top: 57px;
+    cursor: pointer;
+}
+
+/* 蒙层密码修改 */
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+.mask .center {
+    width: 468px;
+    height: 416px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 60px;
+
+}
+
+.mask .center .title {
+    position: relative;
+    font-size: 20px;
+    color: #3C3C3C;
+    line-height: 28px;
+    font-weight: bold;
+    margin-top: 52px;
+    margin-bottom: 39px;
+    pointer-events: none;
+}
+.mask .center .title::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background: url(@/assets/close.png) no-repeat center;
+    cursor: pointer;
+    pointer-events:auto;
+}
+.mask .center .form-control{
+    line-height: 40px;
+    height: 40px;
+    margin-bottom: 17px;
+}
+.mask .pwd-btn{
+    width: 343px;
+    height: 40px;
+    background-color: #E66F11;
+    border: 1px solid #E66F11;
+    outline: none;
+    color: #fff;
+    
+}
+/* .mine-list li{
+   
+    color: black;
+} */
+/* .mask{
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(107, 100, 100, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.mask .alert-pwd{
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    margin: 150px auto;
+    padding: 50px;
+} */
+.col-sm-10 input[type="password"]::-ms-reveal{
+    display:none
+   }
+   .col-sm-10{
+    position: relative;
+   }
+   .col-sm-10 .eye{
+    position: absolute;
+right: 167px;
+top: 6px;
+    width: 25px;
+    height: 25px;
+    background-color: pink;
+   }
+   .img-mask{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1000px;
+    background-color: #9f9898;
+   }
+   .mask-content{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    background-color: #fff;
+    transform: translate(-50%,0);
+   }
+   .mask-content img{
+    width: 200px;
+    height: 200px;
+   }
+   .mask-content button{
+    width: 80px;
+    height: 50px;
+    background-color: #fff;
+    font-size: 20px;
+   }
+   .tab-item:nth-child(1){
+    background-color: #E66F11;
+    color:#fff;
+   }
+   .con-title{
+    width: 450px;
+    height: 34px;
+    margin-left: 110px;
+    
+   }
+   .form-group:nth-child(7){
+    width: 614px;
+    height: 34px;
+   }
+  

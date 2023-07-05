@@ -132,7 +132,9 @@
 
 /* 分页 */
 .content .page {
-    width: fit-content;
+    /* width: fit-content; */
+    width: 1260px;
+    height: 68px;
     margin: 60px auto 78px;
 }
 
@@ -147,6 +149,7 @@
     cursor: pointer;
     margin: 0 7px;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .content .page a.act {
@@ -160,5 +163,20 @@ background-position: 4px 1px;
 }
 .list .item:nth-child(2) .num,
 .list .item:nth-child(3) .num{
+    background-color: #E66F11;
+}
+.page-btn{
+    float: left;
+    width: 65px;
+    height: 34px;
+    /* border: 1px solid rgba(209, 209, 209, 1); */
+    text-align: center;
+    line-height: 32px;
+    color: #676767;
+    margin: 0 7px;
+   margin-bottom: 10px;
+    font-weight: bold;
+}
+.page .num.router-link-active{
     background-color: #E66F11;
 }

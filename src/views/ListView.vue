@@ -29,7 +29,7 @@
             <router-link :to="'/detail/' + movie.mId">
               <div class="num">{{ i > 0 ? i + 1 : "" }}</div>
               <div class="cover">
-                <img :src="movie.medium" alt="" />
+                <img v-if="movie" :src="movie.medium" alt="" @error="reload" />
               </div>
               <div class="info">
                 <div class="title">{{ movie.title }}</div>
@@ -42,13 +42,15 @@
           </li>
         </ul>
         <div class="page clearfix">
+          <div class="page-btn">《上一页</div>
           <router-link
             class="num"
-            to="/list/0/{start:i,limit:8}"
+            :to="'/list/0/'+{start:i,limit:8}"
             v-for="i in total"
             :key="i"
             >{{ i }}</router-link
           >
+          <div class="page-btn">下一页》</div>
         </div>
       </div>
     </div>
@@ -90,6 +92,7 @@ export default {
     // next可以接收函数作为参数，函数自带一个形参为页面的实例；函数内的参数vm代表当前页面vue实例
     next((vm) => {
       vm.type = to.params.type;
+    console.log(vm.type);
       vm.getMovieLs(vm.type);
     });
   },
@@ -113,6 +116,10 @@ export default {
       console.log("list页调用函数的返回值", res);
       this.movieList = res.data.data.list;
       this.total = res.data.data.totalPage;
+    },
+    reload(e) {
+      e.target.src =
+        "https://ts3.cn.mm.bing.net/th?id=OIP-C.ADlFHdE1Blf2lAAzDQgBUAHaFL&w=298&h=209&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=3.1&rm=2";
     },
   },
 };

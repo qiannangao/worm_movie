@@ -65,7 +65,8 @@
     text-align: center;
     cursor: pointer;
 }
-.bg .info .btn img{
+
+.bg .info .btn img {
     width: 18px;
     height: 18px;
     vertical-align: middle;
@@ -203,9 +204,11 @@
 #commet .com-item {
     margin-bottom: 26px;
 }
-#commet .info{
+
+#commet .info {
     overflow: hidden;
 }
+
 #commet .info .avatar {
     width: 46px;
     height: 46px;
@@ -293,27 +296,68 @@
     color: #3C3C3C;
     line-height: 17px;
 }
-.cover{
+
+.cover {
     border: 5px solid #fff;
 }
-.cover img{
+
+.cover img {
     width: 220px;
     height: 300px;
 }
-.info{
+
+.info {
     font-size: 20px;
     text-align: left;
     line-height: 27px;
 }
-.tip{
+
+.tip {
     text-align: left;
 }
-.tip-dir{
+
+.tip-dir {
     width: 725px;
     height: 20px;
     text-align: left;
     float: left;
 }
-.text{
+
+.text {
     font-size: 16px !important;
+    text-align: left;
+}
+.box{
+    position: relative;
+}
+
+.vd-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: #d0c6c6; */
+}
+
+.mask-content {
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    transform: translate(-50%, -50%);
+}
+
+.vd-mask video {
+    width: 800px;
+}
+
+.vd-mask button {
+float: left;
+margin-right: 10px;
+    width: 70px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 5px;
 }
