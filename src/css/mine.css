@@ -189,29 +189,58 @@
 }
 
 /* 用户管理样式 */
-.con.admin table {
+
+.content .admin .manage-title{
+   width: 908px;
+   height: 18px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #4D4D4D;
+    float: left;
+
+}
+ .search{
+    float: right;
+    width: 429px;
+    height: 32px;
+    font-size: 14px;
+}
+.admin table{
+    width: 908px;
+    font-size: 16px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #4D4D4D;
+}
+.table-title{
+    width: 908px;
+    height: 67px;
+    background-color: #F7F7F7;
+}
+/* .admin table {
     width: 100%;
     font-size: 12px;
     color: #4D4D4D;
 }
 
-.con.admin table thead tr {
+.admin table thead tr {
     background: #F7F7F7;
     font-size: 14px;
 }
 
-.con.admin table tr td,
-.con.admin table tr th {
+.admin table tr td,
+.admin table tr th {
     line-height: 50px;
     padding: 0;
     text-align: center;
 
 }
 
-.con.admin table tr td .avatar {
+.admin table tr td .avatar {
     width: 34px;
     height: 34px;
-}
+} */
 
 /* 基本信息样式 */
 .con.info .bg {
@@ -335,7 +364,7 @@ form .save {
     left: 0;
     top: 0;
     background-color: rgba(0, 0, 0, .5);
-    display: none;
+    /* display: none; */
 }
 
 .mask .center {
@@ -360,7 +389,7 @@ form .save {
     margin-bottom: 39px;
     pointer-events: none;
 }
-.mask .center .title::after{
+.mask .center .pwd-close{
     content: '';
     position: absolute;
     right: 0;
@@ -371,10 +400,17 @@ form .save {
     cursor: pointer;
     pointer-events:auto;
 }
+.changepwd{
+    cursor: pointer;
+}
 .mask .center .form-control{
     line-height: 40px;
+    width: 410px;
     height: 40px;
     margin-bottom: 17px;
+    font-size: 16px;
+    padding-left: 10px;
+    box-sizing: border-box;
 }
 .mask .pwd-btn{
     width: 343px;
@@ -426,6 +462,7 @@ top: 6px;
     width: 100%;
     height: 1000px;
     background-color: #9f9898;
+    z-index: 10;
    }
    .mask-content{
     width: 200px;
@@ -446,7 +483,7 @@ top: 6px;
     background-color: #fff;
     font-size: 20px;
    }
-   .tab-item:nth-child(1){
+   .tab-item.router-link-active{
     background-color: #E66F11;
     color:#fff;
    }

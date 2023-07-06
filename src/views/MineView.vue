@@ -5,7 +5,7 @@
             <div class="side">
                 <div class="title">个人中心</div>
                 <div>
-                    <router-link class="tab-item" to="/mine/info">基本信息</router-link>
+                    <router-link class="tab-item" to="/mine/info" exact>基本信息</router-link>
                      <router-link class="tab-item" to="/mine/collect">我的收藏</router-link>
                       <router-link class="tab-item" to="/mine/comments">我的评论</router-link>
                        <router-link class="tab-item" to="/mine/manage">用户管理</router-link>

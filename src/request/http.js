@@ -5,7 +5,7 @@ import {baseURL} from '@/utils/config'
 // 2 创建实例
 let instance = axios.create({
 baseURL,
-timeout: 6000
+timeout: 60000
 })
 // 3.1 请求拦截
 instance.interceptors.request.use(config => {

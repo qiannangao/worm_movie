@@ -52,14 +52,26 @@
    - route/index.js下：在路由表mine路由下设置局部导航守卫； 跳转至我的信息页面先作判断，存在本地token则直接跳转;否则跳转到login页面并使用query传递静态参数from=/mine表示是从mine页面跳转来的
    - LoginView页面下：点击登录按钮跳转到来时的页面，由this.$route.query.from获取来时的页面参数
  + 正则。。。
- ### Mine 个人信息页
- + 在mine下添加info，manage子路由
- + info页面下调用获取getUser函数渲染数据...
- + 导航守卫判断token是否存在，传递路径。。。
- + 在info组件中，发送请求拿到信息渲染页面。。。
- + 点击保存，传入user,发送请求。。。
- + 修改密码：点击出现弹窗，。。。
+
+ ### Mine 
+ + info个人信息页
+  - 在mine下添加info，manage子路由
+  - info页面下调用getUser获取用户信息，渲染到页面上
+  - info页面下调用updateUser更新用户信息
+  - 修改密码：点击修改按钮调用updatePwd函数，传入参数并修改成功
+  - 更新头像：。。。
+    + store下添加user模块，书写changeAvatar函数;InfoView和HeadView中导入辅助函数;InfoView下的mounted中直接调用changeAvatar函数，传递user中的avatar作为参数
+    + 头像预览；。。
+ + manage用户管理页
+
+
+### 分页组件
+ + components下新建PageCom全局组件，在main.js中注册PageCom组件，即可在全局的页面中使用。
+  - 传递total总页数和current属性。
+  - current的值是点击的当前页面。获取current的值有两种方法；(1)给li添加点击事件，向父组件传递当前的n值(分页器的内容)
+  (2)在子组件标签上传递current属性后面加上sync修饰符，在子组件更改该属性值的时候传一个this.$emit('update:修改的属性名', 修改的值);
+
 ### 问题
  + 渲染正常页面报错的问题：数据没有默认值(当页面数据还未加载时，页面已经开始渲染，于是控制台报错。使用v-if标签，当存在数据属性时代表数据加载完成了，这时渲染不会报错)
-
  + 图片数据加载失败，控制台才报错，这时才调用error处理函数
+ + ManageView导入baseURL报错。原因是导入的变量不属于当前实例的私有属性，需要在data中注册该变量

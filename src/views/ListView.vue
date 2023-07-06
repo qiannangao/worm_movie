@@ -41,20 +41,10 @@
             </router-link>
           </li>
         </ul>
-        <div class="page clearfix">
-          <div class="page-btn">《上一页</div>
-          <router-link
-            class="num"
-            :to="'/list/0/'+{start:i,limit:8}"
-            v-for="i in total"
-            :key="i"
-            >{{ i }}</router-link
-          >
-          <div class="page-btn">下一页》</div>
-        </div>
+       <PageCom :total="total" :current.sync="start"></PageCom>
       </div>
     </div>
-  </div>
+  </div> 
 </template>
 
 <script>
@@ -67,6 +57,7 @@ export default {
       type: 0,
       movieList: [],
       total: 0,
+      start:1
     };
   },
   filters: {
@@ -112,7 +103,7 @@ export default {
   methods: {
     async getMovieLs(type) {
       this.type = type;
-      let res = await getMovie(this.type);
+      let res = await getMovie(this.type,{start:this.start,limit:8});
       console.log("list页调用函数的返回值", res);
       this.movieList = res.data.data.list;
       this.total = res.data.data.totalPage;

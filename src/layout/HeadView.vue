@@ -31,7 +31,9 @@
             </li>
           </ul>
           <div class="user">
-            <a href="#" class="avatar"></a>
+            <a href="#" class="avatar">
+              <img :src="avatar" alt="">
+            </a>
             <img src="../assets/bd.png" alt="" />
             <ul class="mine-list">
               <li>我的订单</li>
@@ -51,6 +53,7 @@
 </template>
 
 <script>
+import { mapMutations, mapState } from "vuex";
 export default {
     name: 'HeadView',
 
@@ -59,7 +62,9 @@ export default {
             // type:0
         };
     },
-
+computed:{
+  ...mapState('user',['avatar'])
+},
     mounted() {
         
     },

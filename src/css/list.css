@@ -138,7 +138,7 @@
     margin: 60px auto 78px;
 }
 
-.content .page a {
+.content .page a,.content .page span{
     float: left;
     width: 32px;
     height: 32px;
@@ -152,7 +152,7 @@
     margin-bottom: 5px;
 }
 
-.content .page a.act {
+.content .page a.act,.content .page span.act {
     background-color: #E66F11;
     color: #fff;
 }

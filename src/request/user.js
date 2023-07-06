@@ -23,7 +23,7 @@ function Register(data){
     })
 }
 // 更新头像
-function updateAvatar(file){
+function uploadAvatar(file){
     let formData=new FormData();
     formData.append('file',file);
     return axios({
@@ -40,4 +40,13 @@ function updateUser(user){
        data:user
     })
 }
-export{Login,Register,getUser,updateAvatar,updateUser}
+// 修改密码
+function updatePwd(info){
+    return axios({
+        method:'POST',
+    url:'/user/resetPassword',
+    data:info
+    })
+}
+
+export{Login,Register,getUser,uploadAvatar,updateUser,updatePwd}
