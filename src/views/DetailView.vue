@@ -147,10 +147,10 @@
             <div class="mask-content">
               <video :src="movie.trailers.video[vdIndex]" controls ></video>
               <p>
-                 <button @click="vdIndex-=1" >上一个</button>
-             <button @click="vdIndex+=1" >下一个</button>
-                <!-- <button @click="prev" :disabled='vdIndex==0'>上一个</button>
-              <button @click="next" :disabled='vdIndex==movie.trailers.video.length-1'>下一个</button> -->
+                 <!-- <button @click="vdIndex-=1" >上一个</button>
+             <button @click="vdIndex+=1" >下一个</button> -->
+                <button @click="prev" :disabled='vdIndex==0'>上一个</button>
+              <button @click="next" :disabled='vdIndex==movie.trailers.video.length-1'>下一个</button>
               </p>
             </div>
           </div>

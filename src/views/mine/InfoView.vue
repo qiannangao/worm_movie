@@ -206,7 +206,7 @@ export default {
     
   },
   created() {
-    this.changeAvatar(baseURL + this.user.avatar);
+    
   },
   methods: {
     ...mapMutations("user", ["changeAvatar"]),
@@ -214,6 +214,9 @@ export default {
       let res = await getUser();
       console.log("获取到用户信息的返回值", res);
       this.user = res.data.data;
+      // 获取到用户信息后再进行存储
+      // this.changeAvatar(baseURL + this.user.avatar);
+      this.changeAvatar(this.user.avatar);
     },
     async updateUserLs() {
       this.user.id = this.user.id + "";
@@ -237,7 +240,7 @@ export default {
           this.isEdit = false;
         }
       } else {
-        alert("两次密码不一致");
+        alert("修改失败");
       }
     },
     // 预览头像
@@ -267,7 +270,7 @@ export default {
       if(res.data.success){
          this.isPreview=false;
         // 更新成功，改变头像
-        this.changeAvatar(baseURL+res.data.data.avatar)
+        this.changeAvatar(res.data.data.avatar)
         // console.log(baseURL+res.data.data.avatar);
        
       }

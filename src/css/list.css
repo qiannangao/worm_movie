@@ -180,3 +180,17 @@ background-position: 4px 1px;
 .page .num.router-link-active{
     background-color: #E66F11;
 }
+.back{
+  cursor: pointer;
+    position: fixed;
+    right: 50px;
+    top: 600px;
+    width: 30px;
+    height: 30px;
+}
+.back img{
+    width: 30px;
+}
+.page-btn{
+    cursor: pointer;
+}

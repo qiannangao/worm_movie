@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <div class="content">
+    <div class="content" >
       <div class="w">
         <div class="tip">
           <!-- <p>2021年-12-14 已更新</p> -->
@@ -41,15 +41,18 @@
             </router-link>
           </li>
         </ul>
-       <PageCom :total="total" :current.sync="start"></PageCom>
+        <PageCom :total="total" :current="start" @page="reList"></PageCom>
+        <div class="back" v-if="backShow" @click="backTop">
+          <img src="../assets/th.jpg" alt="">
+        </div>
       </div>
     </div>
-  </div> 
+  </div>
 </template>
 
 <script>
 import { getMovie } from "../request/index";
-export default {
+export default {  
   name: "ListView",
 
   data() {
@@ -57,7 +60,8 @@ export default {
       type: 0,
       movieList: [],
       total: 0,
-      start:1
+      start: 1,
+      backShow:false
     };
   },
   filters: {
@@ -83,7 +87,7 @@ export default {
     // next可以接收函数作为参数，函数自带一个形参为页面的实例；函数内的参数vm代表当前页面vue实例
     next((vm) => {
       vm.type = to.params.type;
-    console.log(vm.type);
+      console.log(vm.type);
       vm.getMovieLs(vm.type);
     });
   },
@@ -93,17 +97,20 @@ export default {
     // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
     // to代表路由信息this.$route
     console.log("路由参数改变监听", to.params); //mId值
-    next();
-    this.getMovieLs(to.params.type);
+    this.start=1
+    this.type=to.params.type
+    this.getMovieLs();
+     next();
   },
   mounted() {
-    this.getMovieLs(this.type);
+    window.addEventListener('scroll',this.scrollMethod)
+    this.getMovieLs();
   },
 
   methods: {
-    async getMovieLs(type) {
-      this.type = type;
-      let res = await getMovie(this.type,{start:this.start,limit:8});
+    async getMovieLs() {
+      let res = await getMovie(this.type, { start: this.start, limit: 8 });
+      console.log('list页的start值',this.start);
       console.log("list页调用函数的返回值", res);
       this.movieList = res.data.data.list;
       this.total = res.data.data.totalPage;
@@ -112,6 +119,19 @@ export default {
       e.target.src =
         "https://ts3.cn.mm.bing.net/th?id=OIP-C.ADlFHdE1Blf2lAAzDQgBUAHaFL&w=298&h=209&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=3.1&rm=2";
     },
+    reList(start){
+      this.start=start;
+      this.getMovieLs();
+    },
+    scrollMethod(){
+     if( document.documentElement.scrollTop>800){
+      console.log(2222);
+      this.backShow=true
+     }
+    },
+    backTop(){
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
   },
 };
 </script>

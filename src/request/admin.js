@@ -8,4 +8,20 @@ function getUserList(data={start:1,limit:10}) {
       data
    })
 }
-export { getUserList }
+
+function delUser(userId){
+   return axios({
+     url: '/admin/delUser',
+     method: "DELETE",
+     data: { userId }
+   })  
+ }
+ 
+ function editAuth(isOpen, username){
+   return axios({
+     url: '/admin/' + (isOpen ? 'unlockUser' : 'lockUser'),
+     method: 'POST',
+     data: {username}
+   })
+ }
+export { getUserList,delUser,editAuth }

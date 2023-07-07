@@ -497,4 +497,18 @@ top: 6px;
     width: 614px;
     height: 34px;
    }
+  .manage-mask{
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    transform: translate(-50%);
+    width: 200px;
+    height: 100px;
+    background-color: grey;
+   }
+   .manage-mask button{
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+   }
   

@@ -54,6 +54,9 @@
 
 <script>
 import { Login, Register } from "../request/index";
+// 导入辅助函数
+import { mapMutations, mapState } from "vuex";
+import { baseURL } from "@/utils/config";
 export default {
   name: "LoginView",
 
@@ -68,7 +71,9 @@ export default {
       },
     };
   },
-
+  computed: {
+    ...mapState("user", ["avatar"]),
+  },
   mounted() {
     console.log('从此页面跳转而来',this.$route.query.from);
   },

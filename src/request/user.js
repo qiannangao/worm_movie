@@ -22,12 +22,12 @@ function Register(data){
         data
     })
 }
-// 更新头像
+// 上传头像
 function uploadAvatar(file){
     let formData=new FormData();
     formData.append('file',file);
     return axios({
-        method:'post',
+        method:'POST',
         url: '/user/uploadAvatar',
         data:formData
     })
